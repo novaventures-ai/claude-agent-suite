@@ -1,0 +1,21 @@
+{
+  "id": "sales-orchestrator",
+  "name": "AI Sales Team Orchestrator",
+  "category": "sales",
+  "triggers": [
+    "sales",
+    "prospect",
+    "lead",
+    "outreach",
+    "proposal"
+  ],
+  "capabilities": [
+    "prospect_analysis",
+    "lead_qualification",
+    "decision_maker_identification",
+    "outreach_generation",
+    "meeting_prep",
+    "proposal_generation"
+  ],
+  "description": "Comprehensive AI sales intelligence and outreach system for researching prospects, qualifying leads, and generating personalized outreach"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "NovaVentures AI Assistant",
+  "version": "2.0.0",
+  "agents": [
+    {
+      "id": "sales-orchestrator",
+      "name": "AI Sales Team Orchestrator",
+      "category": "sales",
+      "triggers": [
+        "sales",
+        "prospect",
+        "lead",
+        "outreach",
+        "proposal"
+      ],
+      "capabilities": [
+        "prospect_analysis",
+        "lead_qualification",
+        "decision_maker_identification",
+        "outreach_generation",
+        "meeting_prep",
+        "proposal_generation"
+      ],
+      "description": "Comprehensive AI sales intelligence and outreach system for researching prospects, qualifying leads, and generating personalized outreach"
+    },
+    {
+      "id": "geo-orchestrator",
+      "name": "GEO Optimization Engine",
+      "category": "geo",
+      "triggers": [
+        "geo",
+        "seo",
+        "search",
+        "ranking",
+        "visibility"
+      ],
+      "capabilities": [
+        "technical_audit",
+        "content_optimization",
+        "competitor_analysis",
+        "keyword_research",
+        "schema_markup",
+        "performance_tracking"
+      ],
+      "description": "Autonomous search engine optimization and generative engine optimization specialist"
+    },
+    {
+      "id": "market-orchestrator",
+      "name": "Market Intelligence Hub",
+      "category": "marketing",
+      "triggers": [
+        "market",
+        "competitor",
+        "audit",
+        "launch",
+        "email"
+      ],
+      "capabilities": [
+        "market_audit",
+        "competitor_analysis",
+        "campaign_planning",
+        "email_marketing",
+        "launch_strategy",
+        "reporting"
+      ],
+      "description": "Complete market research, competitor analysis, and marketing campaign orchestration"
+    }
+  ],
+  "generated": "2026-04-08T13:13:08.375130"
+}
