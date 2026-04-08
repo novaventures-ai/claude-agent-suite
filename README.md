@@ -4,7 +4,10 @@
   <h3>A Full Enterprise AI Workforce Inside Your Terminal</h3>
   
   <p>
-    <b>346 Autonomous Agents</b> • <b>325 Command Suites</b> • <b>15 Departments</b> • <b>Zero-Token Waste</b>
+    <b>346 Autonomous Agents</b> • <b>325+ Command Suites</b> • <b>183 ECC Skills</b> • <b>20+ Hooks</b> • <b>15 Departments</b> • <b>Zero-Token Waste</b>
+  </p>
+  <p>
+    <i>Now enhanced with Everything Claude Code (ECC) integration for autonomous loops, quality gates, and session management</i>
   </p>
 </div>
 
@@ -19,12 +22,15 @@ Most AI tools (like ChatGPT, GitHub Copilot, or standard Claude) suffer from thr
 ## ✅ The Solution: 346 Specialists + The Autonomous Engine
 The **Claude Agent Suite** completely solves this by deploying a massive army of specialized agents governed by **Jarvis** (The Master Orchestrator). 
 
-But the true secret weapon is our integration of **jCodeMunch** (AST-based 95% token reduction) and the **`/autoresearch`** protocol. Our agents don't wait for your next prompt—they operate in an infinite optimization loop while you sleep.
+But the true secret weapon is our integration of **jCodeMunch** (AST-based 95% token reduction), the **`/autoresearch`** protocol, and **Everything Claude Code (ECC)** skills. Our agents don't wait for your next prompt—they operate in infinite optimization loops while you sleep.
 
 ### ⚡ Why This Is Incredibly Powerful
 * **Zero-Token Waste:** Because of jCodeMunch, agents only read the exact 15 lines of the specific function they need to edit, entirely bypassing thousands of lines of irrelevant code.
 * **Self-Healing Code:** If an agent breaks a test during an optimization loop, it automatically rolls back its own code and tries a different architectural approach.
 * **Overnight Compounding Value:** You can queue up 5 optimization tasks before logging off on Friday. By Monday, your app is faster, lighter, and fully tested.
+* **ECC-Powered Quality Gates:** Automatic linting, type-checking, and cost tracking on every edit via 20+ event-driven hooks.
+* **183 Pre-Built Skills:** Instant access to benchmark testing, autonomous loop patterns, and continuous learning architectures from the ECC ecosystem.
+* **Session Persistence:** Automatic session capture, evaluation, and handoff templates for seamless multi-session workflows.
 
 ---
 
@@ -35,6 +41,7 @@ Here is the exact value this brings to your workstation across different domains
 ### 1. 🛠️ Engineering: Delete Technical Debt Overnight
 - **The Problem:** A frontend app bundle is too bloated, or a race condition bug only fails 10% of the time and takes weeks for a junior dev to reproduce.
 - **The Value:** Run `/autoresearch target=Checkout eval="npm run build --json | jq .bundleSize"`. The agent spends the night refactoring dependencies, lazy-loading components, and benchmarking the bundle size until it finds the mathematical minimum size.
+- **ECC Enhancement:** Leverage ECC's `benchmark` and `autonomous-loops` skills for proven optimization patterns and automatic performance regression detection.
 
 ### 2. 📈 Marketing & GEO: Hands-Free Market Dominance
 - **The Problem:** Paying external agencies thousands to audit SEO, write localized content, and ensure LLMs (like ChatGPT) actually cite your brand.
@@ -49,6 +56,40 @@ Here is the exact value this brings to your workstation across different domains
 - **The Value:** The `qlib-portfolio-optimizer` agent uses the `autoresearch` loop to constantly backtest new factors against historical prices, automatically optimizing the Sharpe ratio without human intervention.
 
 ---
+
+## 🔥 New: ECC Integration Highlights
+
+NovaVentures AI now integrates the best components from [Everything Claude Code](https://github.com/affaan-m/everything-claude-code) to supercharge your autonomous workforce:
+
+### 🎣 Event-Driven Hooks System (20+ Automations)
+Located in `/hooks` and `/scripts/hooks/`, these JavaScript hooks trigger on specific events:
+- **Quality Gates:** `quality-gate.js`, `post-edit-typecheck.js`, `pre-bash-commit-quality.js`
+- **Cost Tracking:** `cost-tracker.js` monitors token usage and spending in real-time
+- **Session Management:** `session-start.js`, `session-end.js`, `evaluate-session.js`
+- **Developer Experience:** `desktop-notify.js`, `auto-tmux-dev.js`, `suggest-compact.js`
+- **Governance:** `governance-capture.js`, `mcp-health-check.js`
+
+### 📊 Benchmark & Optimization Skills
+Located in `/skills/ecc-imports/`:
+- **`benchmark/`**: Performance baselines and comparison frameworks for overnight optimization
+- **`autonomous-loops/`**: 6 proven architectures for self-improving agent loops
+- **`continuous-learning-v2/`**: Feedback loops that capture learnings across sessions
+
+### 📜 Language-Specific Rules (12 Ecosystems)
+Located in `/rules/`, providing domain-specific guidance for:
+- TypeScript, Python, Go, Rust, Java, Kotlin, Swift, Dart, C#, C++, PHP, Perl
+- Web development, common patterns, and Chinese language support
+
+### 📚 Context Templates
+Located in `/contexts/`:
+- `dev.md` - Development workflow context
+- `research.md` - Research and exploration mode
+- `review.md` - Code review and quality assurance
+
+### 🛠️ Utility Scripts
+Located in `/scripts/`:
+- `doctor.js` - Diagnostic tool for environment health checks
+- `catalog.js` - Browse and discover available skills and commands
 
 ## 🛠️ Quick Install
 
@@ -92,17 +133,43 @@ chmod +x install.sh
 ```text
 claude-agent-suite/
 ├── agents/           # 346 specialist agent definitions
-├── commands/         # 325 domain-specific commands
+├── commands/         # 325+ domain-specific commands
 │   ├── jarvis.md     # Master orchestrator & translator
 │   ├── tools/autoresearch.md # Background optimization loop 
 │   ├── geo/          # GEO/SEO & Marketing
 │   ├── sales/        # Outreach & Proposals
 │   └── ...           # 60+ command suites
 ├── skills/           # Installable skill modules
+│   ├── universal-skills-manager/  # Native NV skills
+│   └── ecc-imports/   # ECC benchmark, autonomous-loops, continuous-learning
+├── hooks/            # ECC event-driven hooks (hooks.json config)
+├── scripts/          # Automation scripts
+│   ├── hooks/        # 20+ JavaScript hook implementations
+│   ├── doctor.js     # Environment diagnostics
+│   └── catalog.js    # Skills and commands browser
+├── rules/            # Language-specific rules (12 ecosystems)
+│   ├── typescript/   # TS/JS development guidelines
+│   ├── python/       # Python best practices
+│   ├── golang/       # Go patterns
+│   └── ...           # 9 more language ecosystems
+├── contexts/         # Workflow context templates
+│   ├── dev.md        # Development mode
+│   ├── research.md   # Research mode
+│   └── review.md     # Code review mode
 ├── install.sh        # Bash installer
 ├── install.ps1       # PowerShell installer
 └── README.md
 ```
 
 ---
+
+## 📚 Additional Resources
+
+- **[ECC Hooks Documentation](hooks/README.md)** - Complete guide to event-driven automations
+- **[ECC Rules](rules/README.md)** - Language-specific development guidelines
+- **[Skills Catalog](skills/ecc-imports/)** - Browse 183 pre-built skills for autonomous operations
+- **[Context Templates](contexts/)** - Switch between dev, research, and review modes
+
+---
+
 **License:** Private — NovaVentures AI internal use.
