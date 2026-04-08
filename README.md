@@ -331,6 +331,217 @@ Located in `/rules/`:
 
 ---
 
+## 🏢 15 Operational Domains: Agent Network Overview
+
+NovaVentures organizes 357 specialist agents across **15 enterprise domains**. Use the toggles below to explore capabilities per department.
+
+<details>
+<summary><b>🔧 1. Engineering & DevOps (48 Agents)</b> - Click to expand</summary>
+
+**Focus**: Automated refactoring, CI/CD optimization, infrastructure as code
+**Key Agents**: `clean-code-agent`, `k8s-architect`, `ci-pipeline-optimizer`, `tech-debt-reducer`
+**Quick Commands**:
+```bash
+/engineering refactor --target ./src --duration overnight
+/devops k8s-optimize --cluster production
+/code quality-gate --strict
+```
+</details>
+
+<details>
+<summary><b>🌍 2. GEO & SEO (42 Agents)</b> - Click to expand</summary>
+
+**Focus**: AI search visibility, brand mentions, competitor gap analysis
+**Key Agents**: `geo-seo-analyst`, `brand-mention-tracker`, `llms-txt-generator`, `competitor-gap-finder`
+**Quick Commands**:
+```bash
+/geo audit example.com
+/geo brand-mentions --company "NovaVentures"
+/geo llms-txt --generate
+```
+</details>
+
+<details>
+<summary><b>💼 3. Sales Automation (38 Agents)</b> - Click to expand</summary>
+
+**Focus**: Lead scoring, proposal generation, objection handling
+**Key Agents**: `lead-scorer`, `proposal-writer`, `objection-handler`, `pipeline-analyzer`
+**Quick Commands**:
+```bash
+/sales prospect --company "Acme Corp"
+/sales proposal --industry fintech
+/sales objection --type "pricing"
+```
+</details>
+
+<details>
+<summary><b>📢 4. Marketing & Content (32 Agents)</b> - Click to expand</summary>
+
+**Focus**: Content strategy, social media automation, campaign optimization
+**Key Agents**: `content-strategist`, `social-media-optimizer`, `campaign-analyzer`, `brand-voice-guardian`
+**Quick Commands**:
+```bash
+/marketing content-plan --q4
+/marketing social-schedule --platform twitter
+/marketing campaign-roi --id "summer-2024"
+```
+</details>
+
+<details>
+<summary><b>🛡️ 5. Security & Compliance (35 Agents)</b> - Click to expand</summary>
+
+**Focus**: Vulnerability scanning, SOC2/HIPAA compliance, threat modeling
+**Key Agents**: `security-scanner`, `compliance-auditor`, `threat-modeler`, `pentest-automator`
+**Quick Commands**:
+```bash
+/security scan ./src --level deep
+/compliance check --standard SOC2
+/security threat-model --app "payment-service"
+```
+</details>
+
+<details>
+<summary><b>📊 6. Quant Finance (28 Agents)</b> - Click to expand</summary>
+
+**Focus**: Algorithm backtesting, risk modeling, sentiment analysis
+**Key Agents**: `algo-backtester`, `risk-modeler`, `sentiment-analyzer`, `portfolio-optimizer`
+**Quick Commands**:
+```bash
+/qlib optimize --strategy momentum
+/qlib risk --var 99
+/qlib sentiment --sources twitter,reddit
+```
+</details>
+
+<details>
+<summary><b>👥 7. Team Management (22 Agents)</b> - Click to expand</summary>
+
+**Focus**: Sprint planning, performance reviews, resource allocation
+**Key Agents**: `sprint-planner`, `performance-reviewer`, `resource-allocator`, `meeting-optimizer`
+**Quick Commands**:
+```bash
+/team sprint-plan --velocity 45
+/team performance-review --employee "john.doe"
+/team allocate --project "alpha"
+```
+</details>
+
+<details>
+<summary><b>📈 8. Business Intelligence (25 Agents)</b> - Click to expand</summary>
+
+**Focus**: Market analysis, KPI tracking, competitive intelligence
+**Key Agents**: `market-analyst`, `kpi-tracker`, `competitive-intel`, `trend-forecaster`
+**Quick Commands**:
+```bash
+/bi market-report --sector "SaaS"
+/bi kpi-dashboard --quarter Q3
+/bi competitor-watch --company "CompetitorX"
+```
+</details>
+
+<details>
+<summary><b>🎨 9. Design & UX (18 Agents)</b> - Click to expand</summary>
+
+**Focus**: UI audits, accessibility checks, design system enforcement
+**Key Agents**: `ui-auditor`, `accessibility-checker`, `design-system-guardian`, `ux-researcher`
+**Quick Commands**:
+```bash
+/design audit --page "/dashboard"
+/design a11y-check --wcag AA
+/design system-sync --library "Figma"
+```
+</details>
+
+<details>
+<summary><b>📱 10. Mobile Development (20 Agents)</b> - Click to expand</summary>
+
+**Focus**: iOS/Android optimization, cross-platform sync, app store optimization
+**Key Agents**: `ios-optimizer`, `android-specialist`, `flutter-unifier`, `aso-expert`
+**Quick Commands**:
+```bash
+/mobile ios-optimize --xcode-project
+/mobile android-perf --apk ./app.apk
+/mobile aso --keywords "productivity,ai"
+```
+</details>
+
+<details>
+<summary><b>☁️ 11. Cloud Infrastructure (24 Agents)</b> - Click to expand</summary>
+
+**Focus**: Cost optimization, multi-cloud orchestration, serverless tuning
+**Key Agents**: `cloud-cost-optimizer`, `multi-cloud-orchestrator`, `serverless-tuner`, `cdn-architect`
+**Quick Commands**:
+```bash
+/cloud cost-cut --provider aws --target 20%
+/cloud orchestrate --primary aws --backup gcp
+/cloud serverless-optimize --lambda
+```
+</details>
+
+<details>
+<summary><b>🤖 12. AI/ML Operations (26 Agents)</b> - Click to expand</summary>
+
+**Focus**: Model training pipelines, MLOps, drift detection
+**Key Agents**: `ml-pipeline-builder`, `model-trainer`, `drift-detector`, `feature-engineer`
+**Quick Commands**:
+```bash
+/ml pipeline --framework pytorch
+/ml train --dataset "customer-churn"
+/ml drift-check --model "recommendation-v2"
+```
+</details>
+
+<details>
+<summary><b>📦 13. Supply Chain & Logistics (15 Agents)</b> - Click to expand</summary>
+
+**Focus**: Inventory optimization, route planning, demand forecasting
+**Key Agents**: `inventory-optimizer`, `route-planner`, `demand-forecaster`, `supplier-analyzer`
+**Quick Commands**:
+```bash
+/supply inventory-optimize --warehouse "east"
+/supply route-plan --destinations 50
+/supply demand-forecast --product "widget-x"
+```
+</details>
+
+<details>
+<summary><b>⚖️ 14. Legal & Contracts (14 Agents)</b> - Click to expand</summary>
+
+**Focus**: Contract review, compliance checking, IP protection
+**Key Agents**: `contract-reviewer`, `ip-protector`, `gdpr-compliance`, `terms-generator`
+**Quick Commands**:
+```bash
+/legal contract-review --file "nda.pdf"
+/legal ip-check --codebase ./src
+/legal gdpr-audit --data-pipeline
+```
+</details>
+
+<details>
+<summary><b>🆘 15. Customer Support (20 Agents)</b> - Click to expand</summary>
+
+**Focus**: Ticket triage, response generation, sentiment analysis
+**Key Agents**: `ticket-triager`, `response-generator`, `support-sentiment`, `kb-updater`
+**Quick Commands**:
+```bash
+/support triage --queue "urgent"
+/support respond --ticket #12345
+/support sentiment --channel "chat"
+```
+</details>
+
+### 🎯 Cross-Domain Orchestration
+Agents from multiple domains can collaborate on complex tasks:
+```bash
+# Example: Launch a new product feature
+/nexus launch-feature \
+  --agents engineering,marketing,sales,support \
+  --timeline 2-weeks \
+  --auto-coordinate
+```
+
+---
+
 ## 🧩 Extending the Framework
 
 ### Adding a New Agent
