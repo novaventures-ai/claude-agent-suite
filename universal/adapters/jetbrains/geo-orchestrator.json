@@ -1,0 +1,21 @@
+{
+  "id": "geo-orchestrator",
+  "name": "GEO Optimization Engine",
+  "category": "geo",
+  "triggers": [
+    "geo",
+    "seo",
+    "search",
+    "ranking",
+    "visibility"
+  ],
+  "capabilities": [
+    "technical_audit",
+    "content_optimization",
+    "competitor_analysis",
+    "keyword_research",
+    "schema_markup",
+    "performance_tracking"
+  ],
+  "description": "Autonomous search engine optimization and generative engine optimization specialist"
+}

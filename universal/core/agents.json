@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "name": "NovaVentures AI Universal Agent Registry",
+    "version": "2.0.0",
+    "description": "Universal agent definitions compatible with Claude Code, Cursor, VS Code, Antigravity, and GitHub Copilot",
+    "total_agents": 357,
+    "last_updated": "2024-01-15"
+  },
+  "agents": [
+    {
+      "id": "sales-orchestrator",
+      "name": "AI Sales Team Orchestrator",
+      "category": "sales",
+      "trigger_keywords": ["sales", "prospect", "lead", "outreach", "proposal"],
+      "description": "Comprehensive AI sales intelligence and outreach system for researching prospects, qualifying leads, and generating personalized outreach",
+      "capabilities": [
+        "prospect_analysis",
+        "lead_qualification",
+        "decision_maker_identification",
+        "outreach_generation",
+        "meeting_prep",
+        "proposal_generation"
+      ],
+      "sub_agents": [
+        "sales-company",
+        "sales-contacts", 
+        "sales-opportunity",
+        "sales-competitive",
+        "sales-strategy"
+      ],
+      "outputs": ["PROSPECT-ANALYSIS.md", "LEAD-QUALIFICATION.md", "OUTREACH-SEQUENCE.md"],
+      "platform_support": ["claude-code", "cursor", "vscode", "antigravity"]
+    },
+    {
+      "id": "geo-orchestrator",
+      "name": "GEO Optimization Engine",
+      "category": "geo",
+      "trigger_keywords": ["geo", "seo", "search", "ranking", "visibility"],
+      "description": "Autonomous search engine optimization and generative engine optimization specialist",
+      "capabilities": [
+        "technical_audit",
+        "content_optimization",
+        "competitor_analysis",
+        "keyword_research",
+        "schema_markup",
+        "performance_tracking"
+      ],
+      "sub_agents": [
+        "geo-crawlers",
+        "geo-technical",
+        "geo-content",
+        "geo-schema",
+        "geo-prospect"
+      ],
+      "outputs": ["GEO-AUDIT.md", "SEO-STRATEGY.md", "CONTENT-OPTIMIZATION.md"],
+      "platform_support": ["claude-code", "cursor", "vscode", "antigravity"]
+    },
+    {
+      "id": "market-orchestrator",
+      "name": "Market Intelligence Hub",
+      "category": "marketing",
+      "trigger_keywords": ["market", "competitor", "audit", "launch", "email"],
+      "description": "Complete market research, competitor analysis, and marketing campaign orchestration",
+      "capabilities": [
+        "market_audit",
+        "competitor_analysis",
+        "campaign_planning",
+        "email_marketing",
+        "launch_strategy",
+        "reporting"
+      ],
+      "sub_agents": [
+        "market-audit",
+        "market-competitors",
+        "market-seo",
+        "market-emails",
+        "market-launch"
+      ],
+      "outputs": ["MARKET-AUDIT.md", "COMPETITIVE-INTEL.md", "CAMPAIGN-PLAN.md"],
+      "platform_support": ["claude-code", "cursor", "vscode", "antigravity"]
+    }
+  ],
+  "platform_adapters": {
+    "claude-code": {
+      "format": "markdown_skill_files",
+      "location": "commands/{category}/SKILL.md",
+      "invocation": "/{category} {command}"
+    },
+    "cursor": {
+      "format": "cursorrules",
+      "location": ".cursor/rules/{agent}.cursorrule",
+      "invocation": "@{agent}"
+    },
+    "vscode-copilot": {
+      "format": "copilot_instructions",
+      "location": ".github/copilot-instructions.md",
+      "invocation": "Copilot Chat: /{agent}"
+    },
+    "antigravity": {
+      "format": "yaml_workflow",
+      "location": "workflows/{agent}.yaml",
+      "invocation": "ag run {agent}"
+    },
+    "jetbrains": {
+      "format": "json_assistant",
+      "location": ".ai/{agent}.json",
+      "invocation": "AI Assistant: {agent}"
+    }
+  },
+  "universal_commands": {
+    "audit": "Run comprehensive analysis across all domains",
+    "optimize": "Execute autonomous optimization loops",
+    "research": "Deep dive research with autoresearch protocol",
+    "report": "Generate consolidated reports across categories",
+    "handoff": "Create session handoff documentation"
+  }
+}

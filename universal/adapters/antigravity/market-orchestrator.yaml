@@ -1,0 +1,49 @@
+name: market-orchestrator
+version: "2.0.0"
+description: Complete market research, competitor analysis, and marketing campaign orchestration
+category: marketing
+
+inputs:
+  - name: target
+    type: string
+    required: true
+    description: Input target for analysis (URL, company name, etc.)
+
+outputs:
+  - filename: MARKET-ORCHESTRATOR-OUTPUT.md
+    format: markdown
+    description: Analysis results and recommendations
+
+steps:
+  - id: analyze
+    agent: market-orchestrator
+    action: perform_analysis
+    input_from: target
+    output_to: analysis_data
+
+  - id: synthesize
+    agent: market-orchestrator
+    action: synthesize_findings
+    depends_on: [analyze]
+    input_from: analysis_data
+    output_to: final_output
+
+  - id: report
+    agent: market-orchestrator
+    action: generate_report
+    input_from: final_output
+    output_file: MARKET-ORCHESTRATOR-OUTPUT.md
+
+quality_gates:
+  - check: completeness
+    threshold: 0.75
+    action_on_fail: retry
+
+metadata:
+  estimated_duration: "5-10 minutes"
+  token_budget: 50000
+  priority: medium
+  tags: [marketing, market, competitor, audit]
+
+---
+# Usage: ag run market-orchestrator --target <value>
