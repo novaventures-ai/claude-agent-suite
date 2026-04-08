@@ -1,0 +1,142 @@
+name: sales-prospect-analysis
+version: "2.0.0"
+description: Comprehensive prospect research, scoring, and outreach strategy generation
+category: sales
+
+inputs:
+  - name: company_url
+    type: url
+    required: true
+    description: Prospect company website URL
+  - name: target_role
+    type: string
+    required: false
+    description: Specific role to target (e.g., "VP Marketing", "CTO")
+  - name: output_format
+    type: string
+    required: false
+    default: markdown
+    description: Output format: markdown, json, or pdf
+
+outputs:
+  - filename: PROSPECT-ANALYSIS.md
+    format: markdown
+    description: Comprehensive prospect analysis with score and recommendations
+  - filename: prospect-score.json
+    format: json
+    description: Structured prospect scoring data
+
+steps:
+  - id: company_research
+    agent: geo-crawlers
+    action: extract_company_info
+    input_from: company_url
+    output_to: company_data
+    timeout: 120s
+
+  - id: firmographics
+    agent: sales-company
+    action: analyze_firmographics
+    input_from: company_data
+    output_to: firmo_data
+    parallel: true
+
+  - id: tech_stack
+    agent: sales-company
+    action: identify_technologies
+    input_from: company_data
+    output_to: tech_data
+    parallel: true
+
+  - id: contact_mapping
+    agent: sales-contacts
+    action: find_decision_makers
+    input_from: 
+      - company_data
+      - target_role
+    output_to: contacts_data
+    parallel: true
+
+  - id: opportunity_analysis
+    agent: sales-opportunity
+    action: qualify_lead
+    input_from:
+      - firmo_data
+      - tech_data
+    output_to: opportunity_data
+    parallel: true
+
+  - id: competitive_intel
+    agent: sales-competitive
+    action: analyze_competitors
+    input_from: company_data
+    output_to: competitive_data
+    parallel: true
+
+  - id: synthesis
+    agent: sales-strategy
+    action: synthesize_findings
+    depends_on: [firmographics, tech_stack, contact_mapping, opportunity_analysis, competitive_intel]
+    input_from:
+      - firmo_data
+      - tech_data
+      - contacts_data
+      - opportunity_data
+      - competitive_data
+    output_to: final_analysis
+
+  - id: scoring
+    agent: sales-orchestrator
+    action: calculate_prospect_score
+    input_from: final_analysis
+    output_to: score_data
+
+  - id: report_generation
+    agent: sales-orchestrator
+    action: generate_report
+    input_from:
+      - final_analysis
+      - score_data
+      - output_format
+    output_file: PROSPECT-ANALYSIS.md
+
+quality_gates:
+  - check: data_completeness
+    threshold: 0.7
+    action_on_fail: retry
+    max_retries: 2
+    
+  - check: contact_verification
+    threshold: 0.6
+    action_on_fail: manual_review
+    
+  - check: score_confidence
+    threshold: 0.75
+    action_on_fail: add_disclaimer
+
+error_handling:
+  max_retries: 3
+  retry_delay: 30s
+  fallback_agent: human-review
+  abort_conditions:
+    - url_unreachable
+    - no_company_found
+    - token_limit_exceeded
+
+metadata:
+  estimated_duration: "5-8 minutes"
+  token_budget: 75000
+  priority: high
+  tags: [sales, prospecting, lead-qualification, outreach]
+  
+notifications:
+  on_complete:
+    include_summary: true
+  on_error:
+    alert_user: true
+
+---
+# Usage Examples:
+# ag run sales-prospect-analysis --company_url https://example.com
+# ag run sales-prospect-analysis --company_url https://example.com --target_role "VP Marketing"
+# ag run sales-prospect-analysis --company_url https://example.com --output_format json

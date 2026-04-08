@@ -1,0 +1,21 @@
+{
+  "id": "market-orchestrator",
+  "name": "Market Intelligence Hub",
+  "category": "marketing",
+  "triggers": [
+    "market",
+    "competitor",
+    "audit",
+    "launch",
+    "email"
+  ],
+  "capabilities": [
+    "market_audit",
+    "competitor_analysis",
+    "campaign_planning",
+    "email_marketing",
+    "launch_strategy",
+    "reporting"
+  ],
+  "description": "Complete market research, competitor analysis, and marketing campaign orchestration"
+}

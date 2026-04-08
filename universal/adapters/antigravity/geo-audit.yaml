@@ -1,0 +1,159 @@
+name: geo-audit
+version: "2.0.0"
+description: Technical SEO and Generative Engine Optimization audit with actionable recommendations
+category: geo
+
+inputs:
+  - name: website_url
+    type: url
+    required: true
+    description: Website URL to audit
+  - name: focus_keywords
+    type: list
+    required: false
+    description: Target keywords to analyze
+  - name: competitors
+    type: list
+    required: false
+    description: Competitor URLs for comparison
+  - name: depth
+    type: string
+    required: false
+    default: full
+    description: Audit depth: quick, standard, or full
+
+outputs:
+  - filename: GEO-AUDIT.md
+    format: markdown
+    description: Comprehensive GEO audit report with fixes
+  - filename: geo-score.json
+    format: json
+    description: Structured scoring data for tracking
+  - filename: technical-fixes.json
+    format: json
+    description: Prioritized list of technical fixes
+
+steps:
+  - id: crawl_site
+    agent: geo-crawlers
+    action: full_site_crawl
+    input_from: website_url
+    output_to: crawl_data
+    timeout: 300s
+
+  - id: technical_seo
+    agent: geo-technical
+    action: audit_technical_seo
+    input_from: crawl_data
+    output_to: technical_data
+    parallel: true
+
+  - id: content_analysis
+    agent: geo-content
+    action: analyze_content_quality
+    input_from: crawl_data
+    output_to: content_data
+    parallel: true
+
+  - id: schema_check
+    agent: geo-schema
+    action: audit_schema_markup
+    input_from: crawl_data
+    output_to: schema_data
+    parallel: true
+
+  - id: competitor_comparison
+    agent: geo-compare
+    action: compare_with_competitors
+    input_from:
+      - crawl_data
+      - competitors
+    output_to: competitor_data
+    parallel: true
+    condition: "competitors != null"
+
+  - id: keyword_analysis
+    agent: geo-prospect
+    action: analyze_keyword_opportunities
+    input_from:
+      - crawl_data
+      - focus_keywords
+    output_to: keyword_data
+    parallel: true
+    condition: "focus_keywords != null"
+
+  - id: llm_visibility
+    agent: geo-content
+    action: assess_llm_citability
+    input_from: content_data
+    output_to: llm_data
+
+  - id: synthesis
+    agent: geo-orchestrator
+    action: synthesize_audit_findings
+    depends_on: [technical_seo, content_analysis, schema_check, llm_visibility]
+    input_from:
+      - technical_data
+      - content_data
+      - schema_data
+      - llm_data
+      - competitor_data
+      - keyword_data
+    output_to: final_audit
+
+  - id: prioritization
+    agent: geo-orchestrator
+    action: prioritize_fixes
+    input_from: final_audit
+    output_to: prioritized_fixes
+
+  - id: report_generation
+    agent: geo-orchestrator
+    action: generate_audit_report
+    input_from:
+      - final_audit
+      - prioritized_fixes
+    output_file: GEO-AUDIT.md
+
+quality_gates:
+  - check: crawl_coverage
+    threshold: 0.8
+    action_on_fail: expand_crawl
+    max_retries: 2
+    
+  - check: data_completeness
+    threshold: 0.75
+    action_on_fail: manual_review
+    
+  - check: actionable_recommendations
+    threshold: 0.9
+    action_on_fail: regenerate
+
+error_handling:
+  max_retries: 3
+  retry_delay: 45s
+  fallback_agent: human-review
+  abort_conditions:
+    - site_unreachable
+    - robots_txt_block
+    - excessive_redirects
+    - token_limit_exceeded
+
+metadata:
+  estimated_duration: "8-15 minutes"
+  token_budget: 100000
+  priority: high
+  tags: [geo, seo, audit, optimization, llm-visibility]
+
+notifications:
+  on_complete:
+    include_summary: true
+    include_score: true
+  on_error:
+    alert_user: true
+
+---
+# Usage Examples:
+# ag run geo-audit --website_url https://oursite.com
+# ag run geo-audit --website_url https://oursite.com --depth quick
+# ag run geo-audit --website_url https://oursite.com --focus_keywords "saas,project management" --competitors "https://competitor1.com,https://competitor2.com"
